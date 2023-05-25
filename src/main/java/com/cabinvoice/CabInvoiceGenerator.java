@@ -1,6 +1,10 @@
 package com.cabinvoice;
 
+import java.util.Scanner;
+
 public class CabInvoiceGenerator {
+	Scanner sc = new Scanner(System.in);
+
 	public static final double costperKm = 10.0;
 	public static final double costpermin = 1.0;
 	public static final double min_fare = 5.0;
@@ -46,5 +50,9 @@ public class CabInvoiceGenerator {
 		 * To return average of total fare
 		 */
 		return (totalFare/distance.length);
+	}
+
+	public double rideRepository(double [] array,int Id ){
+		return array[Id-1];// should return user id invoice
 	}
 }
