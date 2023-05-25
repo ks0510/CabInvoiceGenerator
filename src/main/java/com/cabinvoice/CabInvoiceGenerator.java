@@ -24,5 +24,27 @@ public class CabInvoiceGenerator {
 		}
 	    return totalFare;// Return the total fare for all rides
 	}
+	/*
+	 * This function return the total number of ride
+	 */
+	public int numberofRides(double[] distance) {
+		double totalFare = 0;   // Initialize the total fare to zero
+		return  distance.length;
+	}
 	
+	/*
+	 * This method will return average of total fares
+	 */
+	public double calculateAverage(double[] distance,int[] time) {
+		double totalFare = 0;   // Initialize the total fare to zero
+
+		for (int i=0;i<distance.length;i++) {
+			totalFare += calculateFare(distance[i],time[i]);
+			// Calculate fare for each ride and accumulate the total fare
+		}
+		/*
+		 * To return average of total fare
+		 */
+		return (totalFare/distance.length);
+	}
 }
