@@ -35,7 +35,7 @@ public class CabInvoiceGenerator {
 	/*
 	 * This method will return average of total fares
 	 */
-	public double calculateAverage(double[] distance,int[] time) {
+	public int calculateAverage(double[] distance,int[] time) {
 		double totalFare = 0;   // Initialize the total fare to zero
 
 		for (int i=0;i<distance.length;i++) {
@@ -45,6 +45,6 @@ public class CabInvoiceGenerator {
 		/*
 		 * To return average of total fare
 		 */
-		return (totalFare/distance.length);
+		return (int) (totalFare/distance.length);
 	}
 }
