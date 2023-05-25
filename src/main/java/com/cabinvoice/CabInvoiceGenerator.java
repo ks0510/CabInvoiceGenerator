@@ -8,15 +8,16 @@ public class CabInvoiceGenerator {
 	public static final double costperKm = 10.0;
 	public static final double costpermin = 1.0;
 	public static final double min_fare = 5.0;
-	private double totalFare; // Instance variable to store the total fare for all rides
+	public static final double premium_min_fare = 20.0;
+	
 
 	public double calculateFare(double distance, int time) {
 		double rideFare = (costperKm * distance) + (costpermin * time);
 		// Calculate fare for an individual ride
-		if (totalFare < 5) {
+		if (rideFare < 5) {
 			return min_fare;
 		}
-		return totalFare;
+		return rideFare;
 	}
 
 	public double calculateTotalFare(double[] distance, int[] time) {
@@ -57,5 +58,30 @@ public class CabInvoiceGenerator {
 	 */
 	public double rideRepository(double [] array,int Id ){
 		return array[Id-1];// should return user id invoice
+	}
+	
+	/*
+	 * To define  method premium ride invoice
+	 */
+	public double calculatePremiumFare(double distance, int time) {
+		double rideFare = (15*distance) + (2*time);
+		// Calculate fare for an individual ride
+		if (rideFare < 20) {
+			return premium_min_fare ;
+		}
+		return rideFare;
+	}
+
+	/*
+	 * To define method which give invoice for premium ride and normal ride also
+	 */
+	public double calFare(double distance, int time,int choice) {
+		double fare;
+		if(choice==1) {
+			fare = calculateFare(distance,time);
+		}
+		else if(choice==2) {
+			fare = calculatePremiumFare(distance,time);
+		}
 	}
 }
