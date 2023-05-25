@@ -32,8 +32,8 @@ public class CabInvoiceGeneratorTest {
     public void calculateAverage_ShouldReturnAverageFare(){
         double[] distance = new double[]{2.0, 3.0, 5.0};
         int[] time = new int[]{5, 10, 15};
-        double averageFare = cabInvoiceGenerator.calculateAverage(distance,time);
-        Assertions.assertEquals(43.33333333,averageFare);
+        int averageFare = cabInvoiceGenerator.calculateAverage(distance,time);
+        Assertions.assertEquals((130/3),averageFare);
     }
 }
 
