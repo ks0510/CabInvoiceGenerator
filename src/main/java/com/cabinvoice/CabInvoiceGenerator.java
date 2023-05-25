@@ -15,7 +15,7 @@ public class CabInvoiceGenerator {
 		return totalFare;
 	}
 
-	public void calculateTotalFare(double[] distance,int[] time) {
+	public double calculateTotalFare(double[] distance, int[] time) {
 		double totalFare = 0;   // Initialize the total fare to zero
 
 		for (int i=0;i<distance.length;i++) {
