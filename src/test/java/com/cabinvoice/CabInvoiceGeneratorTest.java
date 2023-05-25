@@ -12,5 +12,14 @@ public void givenDistance_shouldReturnFare(){
     double result = cabInvoiceGenerator.calculateFare(distance,time);
     Assertions.assertEquals(25.00,result);
     }
+    
+    @Test
+    public void givenDistance_shouldReturnTotalFare() {
+    	double distance = {2.0,3.0,5.0};
+    	int time = {5,10,15};
+    	double result = cabInvoiceGenerator.calculateTotalFare(distance,time);
+    	 Assertions.assertEquals(130,result);
+    }
+    }
 }
 

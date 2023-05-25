@@ -6,25 +6,23 @@ public class CabInvoiceGenerator {
 	public static final double min_fare = 5.0;
 	private double totalFare; // Instance variable to store the total fare for all rides
 
-	public double calculateFare(double distance,int time) {
+	public double calculateFare(double distance, int time) {
 		double rideFare = (costperKm * distance) + (costpermin * time);
 		// Calculate fare for an individual ride
-		if(totalFare<5) {
+		if (totalFare < 5) {
 			return min_fare;
 		}
 		return totalFare;
 	}
 
+	public void calculateTotalFare(double[] distance,int[] time) {
+		double totalFare = 0;   // Initialize the total fare to zero
 
-	public void calculateTotalFare(Ride[] rides) {
-		totalFare = 0;   // Initialize the total fare to zero
-
-		for (Ride ride : rides) {
-			totalFare += calculateFare(ride.distance, ride.time);
+		for (int i=0;i<distance.length;i++) {
+			totalFare += calculateFare(distance[i],time[i]);
 			// Calculate fare for each ride and accumulate the total fare
 		}
+	    return totalFare;// Return the total fare for all rides
 	}
-	public double getTotalFare() {
-		return totalFare;   // Return the total fare for all rides
-	}
+	
 }
