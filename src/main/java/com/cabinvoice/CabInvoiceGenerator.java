@@ -39,7 +39,7 @@ public class CabInvoiceGenerator {
 	/*
 	 * This method will return average of total fares
 	 */
-	public double calculateAverage(double[] distance,int[] time) {
+	public int calculateAverage(double[] distance,int[] time) {
 		double totalFare = 0;   // Initialize the total fare to zero
 
 		for (int i=0;i<distance.length;i++) {
@@ -51,7 +51,10 @@ public class CabInvoiceGenerator {
 		 */
 		return (totalFare/distance.length);
 	}
-
+	/*
+	 * To define method which return invoice if we enter user id
+	 * from ride repo
+	 */
 	public double rideRepository(double [] array,int Id ){
 		return array[Id-1];// should return user id invoice
 	}
